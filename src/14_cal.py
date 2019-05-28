@@ -22,3 +22,17 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+mon = input("month, as a number 1-12: ")
+year = input("year, as a number: ")
+
+
+def make_cal(x,y = 2019):
+  return calendar.TextCalendar(6).formatmonth(y,x,7)
+
+my_cal = make_cal(mon,year)
+
+print(my_cal)
+
+abc = datetime(2019,4,6)
+print(abc)
