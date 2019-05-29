@@ -23,16 +23,19 @@ import sys
 import calendar
 from datetime import datetime
 
-mon = input("month, as a number 1-12: ")
-year = input("year, as a number: ")
+today = datetime.today()
 
-
-def make_cal(x,y = 2019):
+def make_cal(x = today.month,y = today.year):
   return calendar.TextCalendar(6).formatmonth(y,x,7)
 
-my_cal = make_cal(mon,year)
+
+
+if len(sys.argv) == 4:
+  my_cal = make_cal(int(sys.argv[2]),int(sys.argv[3]))
+elif len(sys.argv) == 3:
+  my_cal = make_cal(sys.argv[2])
+elif len(sys.argv) < 3:
+  my_cal = "supply 14_val.py, calendar.py, a month, and a year"
+
 
 print(my_cal)
-
-abc = datetime(2019,4,6)
-print(abc)
